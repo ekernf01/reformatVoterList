@@ -1,0 +1,16 @@
+Package: reformatVoterList
+Title: Reformat A List Of New Voters For The TRU-UE Contract Ratification
+Version: 0.0.0.9000
+Authors@R: 
+    person("Eric", "Kernfeld", , "eric.kern13@gmail.com", role = c("aut", "cre"))
+Description: Used internally for bookkeeping of new voters during the 2024 April TRU-UE contract ratification vote.
+License: MIT License
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    magrittr,
+    readxl
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
