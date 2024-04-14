@@ -4,5 +4,5 @@ If you have never used R, I do not recommend trying to use this. If you are read
 
 ```
 remotes::install_github("ekernf01", "reformatVoterList")
-reformatVoterList:reformat("your/input/file.xlsx", "your/output/file.csv")
+reformatVoterList:reformatVoterList("your/input/file.xlsx", "your/output/file.csv")
 ```
