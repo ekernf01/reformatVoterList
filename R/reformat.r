@@ -32,5 +32,6 @@ reformatVoterList = function(filename_in, filename_out){
   voters = voters[FINAL_COLNAMES]
   voters[["Date/Time"]] = date()
   voters[["Uploaded?"]] = "reserved for Andrew"
+  dir.create(showWarnings = F, path = dirname(filename_out))
   write.csv(voters, paste0(filename_out, ".csv"))
 }
