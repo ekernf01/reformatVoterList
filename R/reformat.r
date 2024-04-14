@@ -1,3 +1,4 @@
+#' @importFrom magrittr "%>%"
 FINAL_COLNAMES = c("First Name",	"Last Name",	"Business Email",	"JHED")
 library(magrittr)
 
