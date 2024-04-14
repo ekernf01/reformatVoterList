@@ -3,6 +3,6 @@ This is an R package to automate some of the boring parts of adding newly regist
 If you have never used R, I do not recommend trying to use this. If you are ready to go with R, you can install and use it as follows. 
 
 ```
-remotes::install_github("ekernf01", "reformatVoterList")
+remotes::install_github("ekernf01/reformatVoterList")
 reformatVoterList:reformatVoterList("your/input/file.xlsx", "your/output/file.csv")
 ```
