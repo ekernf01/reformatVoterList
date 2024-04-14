@@ -19,10 +19,13 @@ isJHU("eric.kern13@jhmi.edu")
 isJHU("eric.kern13@jh.edu")
 keepJHU(c("eric.kern13@gmail.com", "ekernfe1@jh.edu"))
 
+#' Reformat a list of new voters. For internal use during the 2024 April TRU-UE contract ratification vote.
+#'
+#' @export
 reformatVoterList = function(filename_in, filename_out){
   tryCatch(
     expr = {voters = readxl::read_excel(filename_in)},
-    error = function(e) {stop("Sorry, this program could not read that file.")}
+    error = function(...) {stop("Sorry, this program could not read that file.")}
   )
   voters[["Business Email"]] =
     paste(voters[["Business Email"]], voters[["Personal Email"]], sep = "|") %>%
