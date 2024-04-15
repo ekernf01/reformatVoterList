@@ -32,7 +32,7 @@ reformatVoterList = function(filename_in, filename_out){
     paste(voters[["Business Email"]], voters[["Personal Email"]], sep = "|") %>%
     strsplit(split = "\\|") %>%
     lapply(keepJHU) %>%
-    sapply(paste0, collapse="|")
+    sapply(extract2, 1)
   voters = voters[FINAL_COLNAMES]
   voters[["Date/Time"]] = date()
   voters[["Uploaded?"]] = "reserved for Andrew"
