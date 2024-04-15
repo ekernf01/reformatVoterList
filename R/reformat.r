@@ -1,5 +1,5 @@
 #' @importFrom magrittr "%>%"
-FINAL_COLNAMES = c("First Name",	"Last Name",	"Business Email",	"JHED")
+FINAL_COLNAMES = c("First Name",  "Last Name",  "Business Email", "JHED")
 library(magrittr)
 
 isJHU = function(email){
@@ -11,6 +11,10 @@ isJHU = function(email){
 
 keepJHU = function(emails){
   emails[isJHU(emails)]
+}
+
+returnifjhu <- function(emaillist) {
+  return(tryCatch(magrittr::extract2(emaillist,1), error=function(e) NA))
 }
 
 isJHU("eric.kern13@gmail.com")
@@ -32,7 +36,7 @@ reformatVoterList = function(filename_in, filename_out){
     paste(voters[["Business Email"]], voters[["Personal Email"]], sep = "|") %>%
     strsplit(split = "\\|") %>%
     lapply(keepJHU) %>%
-    sapply(magrittr::extract2, 1)
+    sapply(returnifjhu)
   voters = voters[FINAL_COLNAMES]
   voters[["Date/Time"]] = date()
   voters[["Uploaded?"]] = "reserved for Andrew"
