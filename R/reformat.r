@@ -40,6 +40,12 @@ reformatVoterList = function(filename_in, filename_out){
   voters = voters[FINAL_COLNAMES]
   voters[["Date/Time"]] = date()
   voters[["Uploaded?"]] = "reserved for Andrew"
+  voters.no.email = voters %>% dplyr::filter(is.na(`Business Email`))
+  voters.no.jhed = voters %>% dplyr::filter(is.na(JHED))
+  voters.noemail.nojhed = voters %>% dplyr::filter(is.na(`Business Email`) | is.na(JHED))
+  voters <- voters %>% dplyr::filter(!is.na(`Business Email`) & !is.na(JHED))
   dir.create(showWarnings = F, path = dirname(filename_out))
   write.csv(voters, paste0(filename_out, ".csv"))
+  write.csv(voters.noemail.nojhed, paste0(filename_out, "_missingEmailJHED.csv"))
+  # return(list(voters, voters.noemail.nojhed, voters.no.email, voters.no.jhed))
 }
